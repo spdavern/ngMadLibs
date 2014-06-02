@@ -1,0 +1,27 @@
+body {
+  background-color: white;
+  font-family: "Comic Sans MS", serif;
+  font-size: 250%;
+}
+.inputs {
+  font-size: 70%;
+}
+.border {
+  border-top: thick solid black;
+  border-right: thick solid black;
+  border-bottom: thick solid black;
+  border-left: thick solid black;  
+}
+.override {
+  border-top: thin solid black;
+  padding: 40px; 
+}
+.superBig {
+  font-size: 70px;
+}
+.expanded {
+  padding: 20px;
+}
+/** {
+  outline: 1px solid orange;
+}
