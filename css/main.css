@@ -22,6 +22,9 @@ body {
 .expanded {
   padding: 20px;
 }
+.autoHeight {
+  height: auto;
+}
 /** {
   outline: 1px solid orange;
 }
