@@ -3,6 +3,10 @@ body {
   font-family: "Comic Sans MS", serif;
   font-size: 250%;
 }
+footer {
+  font-size: small;
+  text-align: center;
+}
 .inputs {
   font-size: 70%;
 }
@@ -21,6 +25,9 @@ body {
 }
 .expanded {
   padding: 20px;
+}
+.autoHeight {
+  height: auto;
 }
 /** {
   outline: 1px solid orange;
