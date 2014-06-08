@@ -21,13 +21,26 @@ footer {
   padding: 40px; 
 }
 .superBig {
-  font-size: 70px;
+  font-size: 200%;
+  position: relative;
+  top: -15px;
 }
 .expanded {
   padding: 20px;
 }
-.autoHeight {
-  height: auto;
+.row-height-min {
+  height: 140px;
+}
+.logo {
+  width: 40%;
+}
+.smiley {
+  padding: 5px;
+  max-height: 90%;
+  max-width: 90%;
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
 }
 /** {
   outline: 1px solid orange;
