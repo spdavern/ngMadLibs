@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <head>
 	<title>ngMadLibs</title>
-	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.17/angular.min.js"></script>
 	<script src="./scripts/myApp.js"></script>
   	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="./css/main.css">
 	<meta charset="UTF-8">
 </head>
-<body ng-app="myApp">
+<body ng-app="myApp" ng-controller="madLibsController">
 	<br><br>
 		<div class="row">
-		<div class="col-md-2 col-md-offset-2 border">
-			<img src="./img/mad-lib-happy-face.png" alt="MadLibs is FUN!" class="autoHeight">
+		<div class="col-md-2 col-md-offset-2 border row-height-min text-center">
+			<img src="./img/mad-lib-happy-face.png" class="smiley">
 		</div>
-		<div class="col-md-6 text-center border">
-			<img src="./img/ng-mad-libs-logo.png" alt="" width="360">
+		<div class="col-md-6 text-center border row-height-min text-center">
+			<img src="./img/ng-mad-libs-logo.png" class="logo">
 			<p class="superBig">Automate This!</p>
 		</div>
 	</div>
@@ -25,33 +25,33 @@
 			</div>
 			<div class="row inputs">
 				<div class="col-md-4 text-center">
-					<p><input type="text" ng-model="femaleName" placeholder="Female name" autofocus></p>
-					<p><input type="text" ng-model="jobTitle" placeholder="Job title"></p>
-					<p><input type="text" ng-model="tediousTask" placeholder="Tedious task"></p>
+					<p><input type="text" ng-model="words.femaleName" placeholder="Female name" autofocus></p>
+					<p><input type="text" ng-model="words.jobTitle" placeholder="Job title"></p>
+					<p><input type="text" ng-model="words.tediousTask" placeholder="Tedious task"></p>
 				</div>
 				<div class="col-md-4 text-center">
-					<p><input type="text" ng-model="dirtyTask" placeholder="Dirty task"></p>
-					<p><input type="text" ng-model="celebrity" placeholder="Celebrity"></p>
-					<p><input type="text" ng-model="uselessSkill" placeholder="Useless skill"></p>
+					<p><input type="text" ng-model="words.dirtyTask" placeholder="Dirty task"></p>
+					<p><input type="text" ng-model="words.celebrity" placeholder="Celebrity"></p>
+					<p><input type="text" ng-model="words.uselessSkill" placeholder="Useless skill"></p>
 				</div>
 				<div class="col-md-4 text-center">
-					<p><input type="text" ng-model="obnoxiousCeleb" placeholder="Obnoxious Celebrity"></p>
-					<p><input type="text" ng-model="hugeNumber" placeholder="Huge number"></p>
-					<p><input type="text" ng-model="adjective" placeholder="Adjective"></p>
+					<p><input type="text" ng-model="words.obnoxiousCeleb" placeholder="Obnoxious Celebrity"></p>
+					<p><input type="text" ng-model="words.hugeNumber" placeholder="Huge number"></p>
+					<p><input type="text" ng-model="words.adjective" placeholder="Adjective"></p>
 				</div>
 			</div>
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-md-8 col-md-offset-2 border override">
-			<p>{{femaleName}} was a {{jobTitle}} who loved technology. Although she loved parts of her job, she absolutely hated  {{tediousTask}} and {{dirtyTask}}. So, {{femaleName}} met with her life mentor {{celebrity}} who told her to learn how to {{uselessSkill}} with Thinkful. Thinkful didn't offer a course on {{uselessSkill}} so she studied programming instead.
+		<div class="col-md-8 col-md-offset-2 border override" id="madLibsText">
+			<p>{{words.femaleName}} was a {{words.jobTitle}} who loved technology. Although she loved parts of her job, she absolutely hated  {{words.tediousTask}} and {{words.dirtyTask}}. So, {{words.femaleName}} met with her life mentor {{words.celebrity}} who told her to learn how to {{words.uselessSkill}} with Thinkful. Thinkful didn't offer a course on {{uselessSkill}} so she studied programming instead.
 			</p>
-			<p>What a great decision! With her new skills, {{femaleName}} built a(n) {{adjective}} robot named {{obnoxiousCeleb}} that not only loved {{dirtyTask}} but did it {{hugeNumber}}% faster.
+			<p>What a great decision! With her new skills, {{words.femaleName}} built a(n) {{words.adjective}} robot named {{words.obnoxiousCeleb}} that not only loved {{words.dirtyTask}} but did it {{words.hugeNumber}}% faster.
 			</p>
 		</div>
 	</div>
 </body>
 <footer>
-		<br><br>App version: {{version}}<br>
+		<br><br>ngMadLibs App version: {{version}}<br>
 </footer>
 </html>
