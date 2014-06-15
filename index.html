@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <head>
 	<title>ngMadLibs</title>
-	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.17/angular.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.17/angular.js"></script>
 	<script src="./scripts/myApp.js"></script>
   	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="./css/main.css">
 	<meta charset="UTF-8">
 </head>
-<body ng-app="myApp" ng-controller="madLibsController">
+<body ng-app="myApp" ng-controller="madLibsCtrl">
 	<br><br>
 	<div class="row">
 		<div class="col-md-2 col-md-offset-2 border row-height-min text-center">
@@ -23,25 +23,25 @@
 			<div class="row expanded">
 				<span>Provide the following words:</span>
 			</div>
-			<form name="myForm" ng-controller="FormCtrl" ng-submit="submit()" class="row inputs" novalidate>
+			<form name="myForm" ng-controller="formCtrl" ng-submit="submit()" class="row inputs" novalidate>
 				<div class="col-md-4 text-center">	
-					<p><input type="text" ng-model="words.femaleName" placeholder="Female name" autofocus></p>
-					<p><input type="text" ng-model="words.jobTitle" placeholder="Job title"></p>
-					<p><input type="text" ng-model="words.tediousTask" placeholder="Tedious task"></p>
+					<p><input type="text" ng-model="words.femaleName" placeholder="Female name" autofocus required></p>
+					<p><input type="text" ng-model="words.jobTitle" placeholder="Job title" required></p>
+					<p><input type="text" ng-model="words.tediousTask" placeholder="Tedious task" required></p>
 				</div>
 				<div class="col-md-4 text-center">
-					<p><input type="text" ng-model="words.dirtyTask" placeholder="Dirty task"></p>
-					<p><input type="text" ng-model="words.celebrity" placeholder="Celebrity"></p>
-					<p><input type="text" ng-model="words.uselessSkill" placeholder="Useless skill"></p>
+					<p><input type="text" ng-model="words.dirtyTask" placeholder="Dirty task" required></p>
+					<p><input type="text" ng-model="words.celebrity" placeholder="Celebrity" required></p>
+					<p><input type="text" ng-model="words.uselessSkill" placeholder="Useless skill" required></p>
 				</div>
 				<div class="col-md-4 text-center">
-					<p><input type="text" ng-model="words.obnoxiousCeleb" placeholder="Obnoxious Celebrity"></p>
-					<p><input type="text" ng-model="words.hugeNumber" placeholder="Huge number"></p>
-					<p><input type="text" ng-model="words.adjective" placeholder="Adjective"></p>
+					<p><input type="text" ng-model="words.obnoxiousCeleb" placeholder="Obnoxious Celebrity" required></p>
+					<p><input type="text" ng-model="words.hugeNumber" placeholder="Huge number" required></p>
+					<p><input type="text" ng-model="words.adjective" placeholder="Adjective" required></p>
 				</div>
-			</form>
 			<hr>
-			<input type="submit" value="submit" class="pull-right">
+			<input type="submit" value="Submit" class="pull-right">
+			</form>
 		</div>
 	</div>
 	<div class="row" ng-show="false">
