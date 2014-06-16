@@ -22,6 +22,5 @@ angular.module('myApp', [])
 				$scope.showResult = false;
 				console.log('The form is invalid', $scope.data, $scope.showResult);
 			};
-			$scope.$broadcast('displayData', $scope.data)
 		};
 	}]);
