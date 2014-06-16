@@ -10,6 +10,9 @@ footer {
 .inputs {
   font-size: 70%;
 }
+.missing {
+  color: red;
+}
 .border {
   border-top: thick solid black;
   border-right: thick solid black;
