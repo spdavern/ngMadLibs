@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <head>
 	<title>ngMadLibs</title>
-	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.17/angular.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.17/angular.js"></script>
 	<script src="./scripts/myApp.js"></script>
   	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="./css/main.css">
 	<meta charset="UTF-8">
 </head>
-<body ng-app="myApp" ng-controller="madLibsController">
+<body ng-app="myApp" ng-controller="madLibsCtrl">
 	<br><br>
-		<div class="row">
+	<div class="row">
 		<div class="col-md-2 col-md-offset-2 border row-height-min text-center">
 			<img src="./img/mad-lib-happy-face.png" class="smiley">
 		</div>
@@ -18,36 +18,58 @@
 			<p class="superBig">Automate This!</p>
 		</div>
 	</div>
-	<div class="row">
+	<div class="row" ng-hide="showResult">
 		<div class="col-md-8 col-md-offset-2 border override">
 			<div class="row expanded">
-				<span>Provide the following words:</span>
+				<span>Provide the following data:</span>
 			</div>
-			<div class="row inputs">
-				<div class="col-md-4 text-center">
-					<p><input type="text" ng-model="words.femaleName" placeholder="Female name" autofocus></p>
-					<p><input type="text" ng-model="words.jobTitle" placeholder="Job title"></p>
-					<p><input type="text" ng-model="words.tediousTask" placeholder="Tedious task"></p>
+			<form name="myForm" ng-submit="submitted=true; submit()" class="row inputs" novalidate>
+				<div class="row text-center">
+					Select a gender: 
+					<label for="male">Male</label>
+					<input type="radio" name="gender" ng-model="data.gender" value="male"/>
+					<label for="female">Female</label>
+					<input type="radio" name="gender" ng-model="data.gender" value="female"><br><br>
+				</div>
+				<div class="col-md-4 text-center">	
+					<p><input type="text" name="personName" ng-model="data.personName" placeholder="Person's name" autofocus required></p>
+					<p ng-if="submitted && myForm.personName.$error.required" class="missing">A name is required.</p>
+					<p><input type="text" name="job" ng-model="data.jobTitle" placeholder="Job title" required></p>
+					<p ng-if="submitted && myForm.job.$error.required" class="missing">A job is required.</p>
+					<p><input type="text" name="task1" ng-model="data.tediousTask" placeholder="Tedious task" required></p>
+					<p ng-if="submitted && myForm.task1.$error.required" class="missing">A task is required.</p>
 				</div>
 				<div class="col-md-4 text-center">
-					<p><input type="text" ng-model="words.dirtyTask" placeholder="Dirty task"></p>
-					<p><input type="text" ng-model="words.celebrity" placeholder="Celebrity"></p>
-					<p><input type="text" ng-model="words.uselessSkill" placeholder="Useless skill"></p>
+					<p><input type="text" name="task2" ng-model="data.dirtyTask" placeholder="Dirty task" required></p>
+					<p ng-if="submitted && myForm.task2.$error.required" class="missing">A task is required.</p>
+					<p><input type="text" name="celebrity" ng-model="data.celebrity" placeholder="Celebrity" required></p>
+					<p ng-if="submitted && myForm.celebrity.$error.required" class="missing">A celebrity is required.</p>
+					<p><input type="text" name="skill" ng-model="data.uselessSkill" placeholder="Useless skill" required></p>
+					<p ng-if="submitted && myForm.skill.$error.required" class="missing">A skill is required.</p>
 				</div>
 				<div class="col-md-4 text-center">
-					<p><input type="text" ng-model="words.obnoxiousCeleb" placeholder="Obnoxious Celebrity"></p>
-					<p><input type="text" ng-model="words.hugeNumber" placeholder="Huge number"></p>
-					<p><input type="text" ng-model="words.adjective" placeholder="Adjective"></p>
+					<p><input type="text" name="ObnoxCeleb" ng-model="data.obnoxiousCeleb" placeholder="Obnoxious Celebrity" required></p>
+					<p ng-if="submitted && myForm.ObnoxCeleb.$error.required" class="missing">A name is required.</p>
+					<p><input type="number" name="number" ng-model="data.hugeNumber" placeholder="Huge number" required></p>
+					<p ng-if="submitted && myForm.number.$error.required" class="missing">A number is required.</p>
+					<p><input type="text" name="adjective" ng-model="data.adjective" placeholder="Adjective" required></p>
+					<p ng-if="submitted && myForm.adjective.$error.required" class="missing">A entry is required.</p>
 				</div>
-			</div>
+			<hr>
+			<input type="submit" value="Submit" class="pull-right">
+			</form>
 		</div>
 	</div>
-	<div class="row">
+	<div class="row" ng-show="showResult">
 		<div class="col-md-8 col-md-offset-2 border override" id="madLibsText">
-			<p>{{words.femaleName}} was a {{words.jobTitle}} who loved technology. Although she loved parts of her job, she absolutely hated  {{words.tediousTask}} and {{words.dirtyTask}}. So, {{words.femaleName}} met with her life mentor {{words.celebrity}} who told her to learn how to {{words.uselessSkill}} with Thinkful. Thinkful didn't offer a course on {{words.uselessSkill}} so she studied programming instead.
+			<p>{{data.personName}} was a(n) {{data.jobTitle}} who loved technology. Although {{data.heShe}} loved parts of {{data.hisHer}} job, {{data.heShe}} absolutely hated  {{data.tediousTask}} and {{data.dirtyTask}}. So, {{data.personName}} met with {{data.hisHer}} life mentor {{data.celebrity}} who told {{data.himHer}} to learn how to {{data.uselessSkill}} with Thinkful. Thinkful didn't offer a course to {{data.uselessSkill}}, so {{data.heShe}} studied programming instead.
 			</p>
-			<p>What a great decision! With her new skills, {{words.femaleName}} built a(n) {{words.adjective}} robot named {{words.obnoxiousCeleb}} that not only loved {{words.dirtyTask}} but did it {{words.hugeNumber}}% faster.
+			<p>What a great decision! With {{data.hisHer}} new skills, {{data.personName}} built a(n) {{data.adjective}} robot named {{data.obnoxiousCeleb}} that not only loved {{data.dirtyTask}} but did it {{data.hugeNumber}}% faster.
 			</p>
+		</div>
+		<div class="col-md-8 col-md-offset-2 text-center">
+			<br>
+			<input type="button" value="Modify Entries" ng-click="return()">
 		</div>
 	</div>
 </body>
