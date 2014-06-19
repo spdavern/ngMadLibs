@@ -23,7 +23,7 @@
 			<div class="row expanded">
 				<span>Provide the following data:</span>
 			</div>
-			<form name="myForm" ng-controller="formCtrl" ng-submit="submitted=true; submit()" class="row inputs" novalidate>
+			<form name="myForm" ng-submit="submitted=true; submit()" class="row inputs" novalidate>
 				<div class="row text-center">
 					Select a gender: 
 					<label for="male">Male</label>
@@ -62,10 +62,14 @@
 	</div>
 	<div class="row" ng-show="showResult">
 		<div class="col-md-8 col-md-offset-2 border override" id="madLibsText">
-			<p>{{data.personName}} was a {{data.jobTitle}} who loved technology. Although {{data.heShe}} loved parts of {{data.hisHer}} job, {{data.heShe}} absolutely hated  {{data.tediousTask}} and {{data.dirtyTask}}. So, {{data.personName}} met with {{data.hisHer}} life mentor {{data.celebrity}} who told {{data.hisHer}} to learn how to {{data.uselessSkill}} with Thinkful. Thinkful didn't offer a course on {{data.uselessSkill}}, so {{data.heShe}} studied programming instead.
+			<p>{{data.personName}} was a(n) {{data.jobTitle}} who loved technology. Although {{data.heShe}} loved parts of {{data.hisHer}} job, {{data.heShe}} absolutely hated  {{data.tediousTask}} and {{data.dirtyTask}}. So, {{data.personName}} met with {{data.hisHer}} life mentor {{data.celebrity}} who told {{data.himHer}} to learn how to {{data.uselessSkill}} with Thinkful. Thinkful didn't offer a course to {{data.uselessSkill}}, so {{data.heShe}} studied programming instead.
 			</p>
-			<p>What a great decision! With {{data.hisHer}} new skills, {{data.femaleName}} built a(n) {{data.adjective}} robot named {{data.obnoxiousCeleb}} that not only loved {{data.dirtyTask}} but did it {{data.hugeNumber}}% faster.
+			<p>What a great decision! With {{data.hisHer}} new skills, {{data.personName}} built a(n) {{data.adjective}} robot named {{data.obnoxiousCeleb}} that not only loved {{data.dirtyTask}} but did it {{data.hugeNumber}}% faster.
 			</p>
+		</div>
+		<div class="col-md-8 col-md-offset-2 text-center">
+			<br>
+			<input type="button" value="Modify Entries" ng-click="return()">
 		</div>
 	</div>
 </body>
