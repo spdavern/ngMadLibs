@@ -1,3 +1,4 @@
+/* The primary page styling */
 body {
   background-color: white;
   font-family: "Comic Sans MS", serif;
@@ -6,20 +7,6 @@ body {
 footer {
   font-size: small;
   text-align: center;
-}
-.my-show-hide-animation.ng-hide-add {
-  -webkit-transition-delay: 0.5s;
-  transition-delay: 0.5s;
-  opacity:0;
-}
-.my-show-hide-animation.ng-hide-remove {
-  -webkit-transition:0.5s linear all;
-  transition:0.5s linear all;
-  display:block!important;
-  opacity:1;
-}
-.my-show-hide-animation.ng-hide {
-  opacity:0;
 }
 .inputs {
   font-size: 70%;
@@ -58,6 +45,44 @@ footer {
   width: auto;
   display: inline-block;
   vertical-align: middle;
+}
+
+/* AngularJS Animation */
+.my-show-hide-animation.ng-hide-add {
+  -webkit-transition-delay: 0.5s;
+  transition-delay: 0.5s;
+  opacity:0;
+}
+.my-show-hide-animation.ng-hide-remove {
+  -webkit-transition:0.5s linear all;
+  transition:0.5s linear all;
+  display:block!important;
+  opacity:1;
+}
+.my-show-hide-animation.ng-hide {
+  opacity:0;
+}
+
+/* Borrowing from Yuichi Hagio */
+/* Non AngularJS Animation - for webkit browser
+============================ */
+/* Smile Image */
+@-webkit-keyframes smile {
+  0% {-webkit-transform: rotateZ(-5deg);}
+  50% {-webkit-transform: rotateZ(5deg);}
+  100% {-webkit-transform: rotateZ(-5deg);}
+}
+.smileImage {
+  -webkit-animation: smile 2s infinite;
+}
+/* Automate This */
+@-webkit-keyframes automate {
+  0% {color: #00CED1;}
+  50% {color: #FF1493;}
+  100% {color: #00CED1;}
+}
+.automate {
+  -webkit-animation: automate 20s infinite;
 }
 /** {
   outline: 1px solid orange;
