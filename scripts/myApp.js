@@ -1,5 +1,5 @@
 angular.module('myApp', ["ngAnimate"])
-	.constant('VERSION', "4")
+	.constant('VERSION', "4.1")
 	.run(function(VERSION, $rootScope) {
 		$rootScope.version = VERSION;
 	})
