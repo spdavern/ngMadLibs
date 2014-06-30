@@ -5,6 +5,8 @@
 	<script type="text/javascript" src="http://code.angularjs.org/1.3.0-beta.11/angular-animate.js"></script>
 	<script src="./scripts/myApp.js"></script>
   	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+	<!--CDN link for the latest TweenMax-->
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
 	<link rel="stylesheet" href="./css/main.css">
 	<meta charset="UTF-8">
 </head>
@@ -32,7 +34,8 @@
 					<label for="female">Female</label>
 					<input type="radio" name="gender" ng-model="data.gender" value="female"><br><br>
 				</div>
-				<div class="col-md-4 text-center">	
+				<div class="col-md-4 text-center">
+					<div id="personNameText" class="hiddenWords" ng-hide="data.hideWords">{{data.personName}}</div>
 					<p><input type="text" name="personName" ng-model="data.personName" placeholder="Person's name" autofocus required></p>
 					<p ng-if="submitted && myForm.personName.$error.required" class="missing">A name is required.</p>
 					<p><input type="text" name="job" ng-model="data.jobTitle" placeholder="Job title" required></p>

@@ -46,6 +46,13 @@ footer {
   display: inline-block;
   vertical-align: middle;
 }
+.HiddenWords {
+  /*float: left;*/
+  position:fixed;
+  top:0px;
+  left:0px;
+  z-index: 1;
+}
 
 /* AngularJS Animation */
 .my-show-hide-animation.ng-hide-add {
