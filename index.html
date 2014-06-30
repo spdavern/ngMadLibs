@@ -4,8 +4,11 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.11/angular.js"></script>
 	<script type="text/javascript" src="http://code.angularjs.org/1.3.0-beta.11/angular-animate.js"></script>
 	<script src="./scripts/myApp.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="./scripts/floating-labels.js"></script>
   	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/floating-labels.css">
 	<meta charset="UTF-8">
 </head>
 <body ng-app="myApp" ng-controller="madLibsCtrl">
@@ -24,37 +27,64 @@
 			<div class="row expanded">
 				<span>Provide the following data:</span>
 			</div>
-			<form name="myForm" ng-submit="submitted=true; submit()" class="row inputs"  novalidate>
+			<form name="myForm" ng-submit="submitted=true; submit()" class="row smallerFontSize"  novalidate>
 				<div class="row text-center">
 					Select a gender: 
 					<label for="male">Male</label>
 					<input type="radio" name="gender" ng-model="data.gender" value="male"/>
 					<label for="female">Female</label>
-					<input type="radio" name="gender" ng-model="data.gender" value="female"><br><br>
+					<input type="radio" name="gender" ng-model="data.gender" value="female"><br>
 				</div>
 				<div class="col-md-4 text-center">	
-					<p><input type="text" name="personName" ng-model="data.personName" placeholder="Person's name" autofocus required></p>
-					<p ng-if="submitted && myForm.personName.$error.required" class="missing">A name is required.</p>
-					<p><input type="text" name="job" ng-model="data.jobTitle" placeholder="Job title" required></p>
-					<p ng-if="submitted && myForm.job.$error.required" class="missing">A job is required.</p>
-					<p><input type="text" name="task1" ng-model="data.tediousTask" placeholder="Tedious task" required></p>
-					<p ng-if="submitted && myForm.task1.$error.required" class="missing">A task is required.</p>
+					<p class="form-group floating-label-form-group">
+						<label class="text-left" for="personName">Person's name</label>
+						<input class="form-control" type="text" name="personName" ng-model="data.personName" placeholder="Person's name" autofocus required>
+						<span ng-if="submitted && myForm.personName.$error.required" class="missing">A name is required.</span>
+					</p>
+					<p class="form-group floating-label-form-group">
+						<label class="text-left" for="job">Job title</label>
+						<input class="form-control" type="text" name="job" ng-model="data.jobTitle" placeholder="Job title" required>
+						<span ng-if="submitted && myForm.job.$error.required" class="missing">A job is required.</span>
+					</p>
+					<p class="form-group floating-label-form-group">
+						<label class="text-left" for="tast1">Tedious task</label>
+						<input class="form-control" type="text" name="task1" ng-model="data.tediousTask" placeholder="Tedious task" required>
+						<span ng-if="submitted && myForm.task1.$error.required" class="missing">A task is required.</span>
+					</p>
 				</div>
 				<div class="col-md-4 text-center">
-					<p><input type="text" name="task2" ng-model="data.dirtyTask" placeholder="Dirty task" required></p>
-					<p ng-if="submitted && myForm.task2.$error.required" class="missing">A task is required.</p>
-					<p><input type="text" name="celebrity" ng-model="data.celebrity" placeholder="Celebrity" required></p>
-					<p ng-if="submitted && myForm.celebrity.$error.required" class="missing">A celebrity is required.</p>
-					<p><input type="text" name="skill" ng-model="data.uselessSkill" placeholder="Useless skill" required></p>
-					<p ng-if="submitted && myForm.skill.$error.required" class="missing">A skill is required.</p>
+					<p class="form-group floating-label-form-group">
+						<label class="text-left" for="task2">Dirty task</label>
+						<input class="form-control" type="text" name="task2" ng-model="data.dirtyTask" placeholder="Dirty task" required>
+						<span ng-if="submitted && myForm.task2.$error.required" class="missing">A task is required.</span>
+					</p>
+					<p class="form-group floating-label-form-group">
+						<label class="text-left" for="celebrity">Celebrity</label>
+						<input class="form-control" type="text" name="celebrity" ng-model="data.celebrity" placeholder="Celebrity" required>
+						<span ng-if="submitted && myForm.celebrity.$error.required" class="missing">A celebrity is required.</span>
+					</p>
+					<p class="form-group floating-label-form-group">
+						<label class="text-left" for="skill">Useless skill</label>
+						<input class="form-control" type="text" name="skill" ng-model="data.uselessSkill" placeholder="Useless skill" required>
+						<span ng-if="submitted && myForm.skill.$error.required" class="missing">A skill is required.</span>
+					</p>
 				</div>
 				<div class="col-md-4 text-center">
-					<p><input type="text" name="ObnoxCeleb" ng-model="data.obnoxiousCeleb" placeholder="Obnoxious Celebrity" required></p>
-					<p ng-if="submitted && myForm.ObnoxCeleb.$error.required" class="missing">A name is required.</p>
-					<p><input type="number" name="number" ng-model="data.hugeNumber" placeholder="Huge number" required></p>
-					<p ng-if="submitted && myForm.number.$error.required" class="missing">A number is required.</p>
-					<p><input type="text" name="adjective" ng-model="data.adjective" placeholder="Adjective" required></p>
-					<p ng-if="submitted && myForm.adjective.$error.required" class="missing">A entry is required.</p>
+					<p class="form-group floating-label-form-group">
+						<label class="text-left" for="ObnoxCeleb">Obnoxious celebrity</label>
+						<input class="form-control" type="text" name="ObnoxCeleb" ng-model="data.obnoxiousCeleb" placeholder="Obnoxious celebrity" required>
+						<span ng-if="submitted && myForm.ObnoxCeleb.$error.required" class="missing">A name is required.</span>
+					</p>
+					<p class="form-group floating-label-form-group">
+						<label class="text-left" for="number">Huge number</label>
+						<input class="form-control" type="number" name="number" ng-model="data.hugeNumber" placeholder="Huge number" required>
+						<span ng-if="submitted && myForm.number.$error.required" class="missing">A number is required.</span>
+					</p>
+					<p class="form-group floating-label-form-group">
+						<label class="text-left" for="adjective">Adjective</label>
+						<input class="form-control" type="text" name="adjective" ng-model="data.adjective" placeholder="Adjective" required>
+						<span ng-if="submitted && myForm.adjective.$error.required" class="missing">A entry is required.</span>
+					</p>
 				</div>
 			<hr>
 			<input id="submitButton" type="submit" value="Submit" class="pull-right">
@@ -70,7 +100,7 @@
 		</div>
 		<div class="col-md-8 col-md-offset-2 text-center">
 			<br>
-			<input id="modifyEntries" class="inputs" type="button" value="Modify Entries" ng-click="return()">
+			<input id="modifyEntries" class="smallerFontSize" type="button" value="Modify Entries" ng-click="return()">
 		</div>
 	</div>
 </body>
