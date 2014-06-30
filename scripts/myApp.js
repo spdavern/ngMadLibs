@@ -1,5 +1,5 @@
 angular.module('myApp', ["ngAnimate"])
-	.constant('VERSION', "4.1")
+	.constant('VERSION', "4.2")
 	.run(function(VERSION, $rootScope) {
 		$rootScope.version = VERSION;
 	})
@@ -15,10 +15,12 @@ angular.module('myApp', ["ngAnimate"])
 				$scope.data.hisHer	= "her";
 				$scope.data.himHer = "her"
 			};
-			if(['a','e','i','o','u'].indexOf($scope.data.jobTitle.charAt(0)) !== -1) {
-				$scope.data.aAn = "an"
-			} else {
-				$scope.data.aAn = "a"
+			if($scope.data.jobTitle !== undefined) {
+				if(['a','e','i','o','u'].indexOf($scope.data.jobTitle.charAt(0)) !== -1) {
+					$scope.data.aAn = "an"
+				} else {
+					$scope.data.aAn = "a"
+				};
 			};
 			if($scope.myForm.$valid) {
 				$scope.showResult = true;
